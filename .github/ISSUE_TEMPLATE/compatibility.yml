@@ -1,0 +1,17 @@
+name: Version compatibility report
+description: Report breakage after Minecraft or third-party plugin updates
+title: "[Compatibility]: "
+labels: ["compatibility", "triage"]
+body:
+  - type: input
+    id: before
+    attributes: { label: Last working versions }
+    validations: { required: true }
+  - type: input
+    id: after
+    attributes: { label: First broken versions }
+    validations: { required: true }
+  - type: textarea
+    id: symptoms
+    attributes: { label: Symptoms, reproduction, and complete relevant error }
+    validations: { required: true }

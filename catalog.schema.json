@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/sunarya-thito/BeaconPlus-Addons/catalog.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "addons"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "addons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "version", "apiVersion", "entrypoint", "downloadUrl", "sha256"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$" },
+          "name": { "type": "string", "minLength": 1 },
+          "version": { "type": "string", "minLength": 1 },
+          "apiVersion": { "type": "string", "minLength": 1 },
+          "entrypoint": { "type": "string", "minLength": 3 },
+          "downloadUrl": { "type": "string", "format": "uri", "pattern": "^https://github\\.com/" },
+          "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "size": { "type": "integer", "minimum": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

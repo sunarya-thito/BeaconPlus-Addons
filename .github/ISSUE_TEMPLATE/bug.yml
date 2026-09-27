@@ -1,0 +1,29 @@
+name: Bug report
+description: Report a reproducible BeaconPlus or addon defect
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: checkboxes
+    attributes:
+      label: Pre-flight checks
+      options:
+        - label: I searched existing issues and removed credentials/private plugin JARs from attachments.
+          required: true
+        - label: I reproduced this after a full server restart (not /reload).
+          required: true
+  - type: input
+    id: versions
+    attributes: { label: BeaconPlus, server build, Minecraft, Java, addon, and target plugin versions }
+    validations: { required: true }
+  - type: textarea
+    id: reproduce
+    attributes: { label: Reproduction steps }
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes: { label: Expected behavior }
+    validations: { required: true }
+  - type: textarea
+    id: actual
+    attributes: { label: Actual behavior and logs }
+    validations: { required: true }
